@@ -2,10 +2,11 @@ import SharedText from "@/components/shared/sharedText";
 import Image from "next/image";
 import profileImg from "@/public/1.jpg";
 import RowCont from "@/components/shared/rowCont";
+import SectionLayout from "@/components/shared/sectionLayout";
 
 export default function About() {
   return (
-    <section className="flex flex-col gap-10 h-dvh p-10 lg:p-20 transition-all duration-300 ease-in-out">
+    <SectionLayout>
       <SharedText textType="h2" text="ABOUT" />
       <div className="flex flex-col gap-10">
         <div className="flex flex-col md:flex-row items-center gap-5 md:gap-16">
@@ -95,6 +96,6 @@ export default function About() {
         <SharedText textType="p" text="유동관리사 3급" />
         <SharedText textType="p" text="중등학교2급정교사 (미술)" />
       </div>
-    </section>
+    </SectionLayout>
   );
 }

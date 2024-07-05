@@ -2,7 +2,7 @@ interface ITextProps {
   textType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
   text: string;
   color?: string;
-  className?: string;
+  className?: string | boolean;
 }
 export default function SharedText({
   textType,
@@ -40,6 +40,6 @@ export default function SharedText({
     case "p":
       return <p className={`${color} ${className} `}>{text}</p>;
     case "span":
-      return <span className={`${color} ${className} `}>{text}</span>;
+      return <span className={`${color} ${className} text-xs`}>{text}</span>;
   }
 }
