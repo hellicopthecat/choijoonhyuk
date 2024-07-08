@@ -14,26 +14,12 @@ export default function About() {
             <Image src={profileImg} alt="프로필이미지" />
           </div>
           <div className="flex flex-col items-center md:items-start md:gap-3 ">
-            <RowCont className="flex gap-5">
-              <SharedText
-                textType="h3"
-                text="이 름"
-                className="hidden md:flex"
-              />
-              <SharedText textType="h4" text="최 준 혁" />
-            </RowCont>
-            <RowCont className="flex gap-5">
-              <SharedText
-                textType="h5"
-                text="생년월일"
-                className="hidden md:flex"
-              />
-              <SharedText
-                textType="p"
-                text="91.05.04"
-                className="text-gray-400"
-              />
-            </RowCont>
+            <SharedText textType="h4" text="최 준 혁" />
+            <SharedText
+              textType="p"
+              text="91.05.04"
+              className="text-gray-400"
+            />
           </div>
         </div>
         <div className="flex flex-col gap-3">
@@ -42,8 +28,6 @@ export default function About() {
             text="근성있고 도전을 좋아하는 개발자 최준혁입니다."
             className="text-center md:text-left text-nowrap"
           />
-          <SharedText textType="p" text="생년월일" />
-          <SharedText textType="p" text="생년월일" />
         </div>
       </div>
       <div className="flex flex-col gap-5">

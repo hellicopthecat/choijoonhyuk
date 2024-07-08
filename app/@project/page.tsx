@@ -5,9 +5,9 @@ import {myProjects} from "@/constants/myProjects";
 
 export default function Page() {
   return (
-    <SectionLayout>
+    <SectionLayout className="2xl:h-dvh">
       <SharedText textType="h2" text="PROJECTS" />
-      <div className="grid grid-flow-row gap-5 md:grid-cols-2 lg:grid-flow-row lg:grid-cols-2 xl:grid-flow-row xl:grid-cols-3 2xl:grid-flow-xol 2xl:grid-cols-5">
+      <div className="grid gap-10 grid-cols-auto-fit-500 w-[80%]">
         {myProjects.map((item) => (
           <ProjectCard key={item.id} item={item} />
         ))}

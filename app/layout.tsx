@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer/footer";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -14,22 +15,24 @@ export default function RootLayout({
   children,
   about,
   project,
+  contact,
 }: Readonly<{
   children: React.ReactNode;
   about: React.ReactNode;
   project: React.ReactNode;
+  contact: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} relative overflow-x-hidden bg-slate-800 w-dvw h-dvh`}
-      >
+      <body className={`${inter.className} relative  bg-slate-800  h-dvh`}>
         <main>
           <Navigation />
           {children}
           {about}
           {project}
+          {contact}
         </main>
+        <Footer />
       </body>
     </html>
   );

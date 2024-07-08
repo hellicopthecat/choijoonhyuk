@@ -20,6 +20,7 @@ import prismaIcon from "@/public/codeSvg/Prisma_dark.svg";
 import expoIcon from "@/public/codeSvg/expo.svg";
 import zustandIcon from "@/public/codeSvg/zustand.svg";
 import socketIOIcon from "@/public/codeSvg/socket-io.svg";
+
 export const myProjects: Array<IMyProject> = [
   {
     id: 1,
@@ -36,7 +37,14 @@ export const myProjects: Array<IMyProject> = [
     ],
     desc: "뚜레쥬르 홈페이지 리뉴얼",
     gitHub: "",
-    update: [{ver: "1.0.0", date: "2023.06.05", desc: "초기배포"}],
+    update: [
+      {
+        id: 1,
+        ver: "1.0.0",
+        date: "2023.06.05",
+        updateDesc: [{id: 1, desc: "초기배포"}],
+      },
+    ],
   },
   {
     id: 2,
@@ -54,7 +62,14 @@ export const myProjects: Array<IMyProject> = [
     back: [{name: "Firebase", badge: firebaseIcon}],
     desc: "",
     gitHub: "",
-    update: [{ver: "1.0.0", date: "2023.07.14", desc: "초기배포"}],
+    update: [
+      {
+        id: 1,
+        ver: "1.0.0",
+        date: "2023.07.14",
+        updateDesc: [{id: 1, desc: "초기배포"}],
+      },
+    ],
   },
   {
     id: 3,
@@ -74,7 +89,14 @@ export const myProjects: Array<IMyProject> = [
     elseStack: [{name: "SocketIO", badge: socketIOIcon}],
     desc: "",
     gitHub: "",
-    update: [{ver: "1.0.0", date: "2023.08.29", desc: "초기배포"}],
+    update: [
+      {
+        id: 1,
+        ver: "1.0.0",
+        date: "2023.08.29",
+        updateDesc: [{id: 1, desc: "초기배포"}],
+      },
+    ],
   },
   {
     id: 4,
@@ -97,7 +119,14 @@ export const myProjects: Array<IMyProject> = [
     ],
     desc: "",
     gitHub: "",
-    update: [{ver: "1.0.0", date: "2023.08.29", desc: "초기배포"}],
+    update: [
+      {
+        id: 1,
+        ver: "1.0.0",
+        date: "2023.08.29",
+        updateDesc: [{id: 1, desc: "초기배포"}],
+      },
+    ],
   },
   {
     id: 5,
@@ -115,6 +144,13 @@ export const myProjects: Array<IMyProject> = [
     back: [{name: "Apollo/Server", badge: apolloIcon}],
     desc: "",
     gitHub: "",
-    update: [{ver: "1.0.0", date: "2024.07.01", desc: "초기배포"}],
+    update: [
+      {
+        id: 1,
+        ver: "1.0.0",
+        date: "2024.07.01",
+        updateDesc: [{id: 1, desc: "초기배포"}],
+      },
+    ],
   },
 ];

@@ -11,5 +11,10 @@ export interface IMyProject {
   elseStack?: Array<{name: string; badge: string}>;
   desc: string;
   gitHub: string;
-  update: Array<{ver: string; date: string; desc: string}>;
+  update: Array<{
+    id: number;
+    ver: string;
+    date: string;
+    updateDesc: Array<{id: number; desc: string}>;
+  }>;
 }

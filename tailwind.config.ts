@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -12,6 +12,10 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      gridTemplateColumns: {
+        "auto-fill-500": "repeat(auto-fill,minmax(500px,1fr))",
+        "auto-fit-500": "repeat(auto-fit,minmax(500px,1fr))",
       },
     },
   },

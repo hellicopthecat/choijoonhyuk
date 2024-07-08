@@ -36,7 +36,11 @@ export default function SharedText({
         </h5>
       );
     case "h6":
-      return <h6 className={`${color} ${className} `}>{text}</h6>;
+      return (
+        <h6 className={`${color} ${className} font-semibold text-lg `}>
+          {text}
+        </h6>
+      );
     case "p":
       return <p className={`${color} ${className} `}>{text}</p>;
     case "span":
