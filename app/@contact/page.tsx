@@ -1,18 +1,43 @@
 "use client";
 import SectionLayout from "@/components/shared/sectionLayout";
 import SharedText from "@/components/shared/sharedText";
-import {useFormState} from "react-dom";
+import {useFormState, useFormStatus} from "react-dom";
 import {sendEmail} from "./action";
 import SharedInput from "@/components/shared/sharedInput";
 import Link from "next/link";
+import {ChangeEvent} from "react";
+import {useContactStore} from "@/stores/contact";
+
+const inintialState = {
+  sendMsgState: false,
+  error: undefined,
+};
 
 export default function Page() {
-  const [sendEmailState, sendEmailFn] = useFormState(sendEmail, null);
+  const [state, sendEmailFn] = useFormState(sendEmail, inintialState);
+  const {pending} = useFormStatus();
+  const {contactValue, setContactValue} = useContactStore();
   //fn
+  const handleOnChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const {name, value} = event.target;
+    setContactValue(name, value);
+  };
+
+  const handleSubmit = async (payload: FormData) => {
+    sendEmailFn(payload);
+    setContactValue("name", "");
+    setContactValue("email", "");
+    setContactValue("title", "");
+    setContactValue("description", "");
+  };
+
   const saveClipboard = () => {
     navigator.clipboard.writeText("jhccop@naver.com");
     alert("복사되었습니다.");
   };
+
   return (
     <SectionLayout className="flex flex-col">
       <SharedText textType="h2" text="CONTACT" />
@@ -58,15 +83,21 @@ export default function Page() {
           </Link>
         </div>
         <form
-          action={sendEmailFn}
+          action={handleSubmit}
           className="flex flex-col items-center sm:items-start md:items-center xl:items-end gap-5 "
         >
-          <legend>
+          <legend hidden>
             <SharedText textType="h6" text="Contact" />
           </legend>
           <ul className="flex flex-col gap-5">
             <li className="flex gap-3 ">
-              <SharedInput name="name" labelText="성함" placeholder="성함" />
+              <SharedInput
+                name="name"
+                labelText="성함"
+                placeholder="성함"
+                value={contactValue.name}
+                onChange={handleOnChange}
+              />
             </li>
             <li className="flex gap-3 ">
               <SharedInput
@@ -74,21 +105,35 @@ export default function Page() {
                 labelText="이메일"
                 inputType="email"
                 placeholder="이메일"
+                value={contactValue.email}
+                onChange={handleOnChange}
               />
             </li>
             <li className="flex gap-3 ">
-              <SharedInput name="title" labelText="제목" placeholder="제목" />
+              <SharedInput
+                name="title"
+                labelText="제목"
+                placeholder="제목"
+                value={contactValue.title}
+                onChange={handleOnChange}
+              />
             </li>
             <li className="flex gap-3 ">
               <SharedInput
                 name="description"
                 labelText="내용"
                 placeholder="내용을 입력해주세요."
+                value={contactValue.description}
+                onChange={handleOnChange}
                 textarea
               />
             </li>
           </ul>
-          <button className="self-end bg-slate-600 px-2 py-1 rounded-md">
+          <button
+            type="submit"
+            className="self-end bg-slate-600 px-2 py-1 rounded-md"
+            disabled={pending}
+          >
             <SharedText textType="h6" text="Send Eamil" />
           </button>
         </form>

@@ -1,10 +1,12 @@
-import {HTMLInputTypeAttribute} from "react";
+import {ChangeEvent, HTMLInputTypeAttribute} from "react";
 
 interface ISharedInput {
   name: string;
   labelText: string;
   inputType?: HTMLInputTypeAttribute;
   placeholder: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   textarea?: boolean;
 }
 export default function SharedInput({
@@ -13,6 +15,8 @@ export default function SharedInput({
   inputType = "text",
   placeholder,
   textarea = false,
+  onChange,
+  value,
 }: ISharedInput) {
   return (
     <>
@@ -25,6 +29,8 @@ export default function SharedInput({
           name={name}
           placeholder={placeholder}
           className="px-3 py-2 rounded-lg "
+          value={value}
+          onChange={onChange}
         ></textarea>
       ) : (
         <input
@@ -33,6 +39,8 @@ export default function SharedInput({
           type={inputType}
           placeholder={placeholder}
           className="px-3 py-2 rounded-lg "
+          value={value}
+          onChange={onChange}
           required
         />
       )}
