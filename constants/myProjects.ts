@@ -40,6 +40,7 @@ export const myProjects: Array<IMyProject> = [
     update: [
       {
         id: 1,
+        pjid: 1,
         ver: "1.0.0",
         date: "2023.06.05",
         updateDesc: [{id: 1, desc: "초기배포"}],
@@ -65,6 +66,7 @@ export const myProjects: Array<IMyProject> = [
     update: [
       {
         id: 1,
+        pjid: 2,
         ver: "1.0.0",
         date: "2023.07.14",
         updateDesc: [{id: 1, desc: "초기배포"}],
@@ -92,6 +94,7 @@ export const myProjects: Array<IMyProject> = [
     update: [
       {
         id: 1,
+        pjid: 3,
         ver: "1.0.0",
         date: "2023.08.29",
         updateDesc: [{id: 1, desc: "초기배포"}],
@@ -122,6 +125,7 @@ export const myProjects: Array<IMyProject> = [
     update: [
       {
         id: 1,
+        pjid: 4,
         ver: "1.0.0",
         date: "2023.08.29",
         updateDesc: [{id: 1, desc: "초기배포"}],
@@ -147,6 +151,7 @@ export const myProjects: Array<IMyProject> = [
     update: [
       {
         id: 1,
+        pjid: 5,
         ver: "1.0.0",
         date: "2024.07.01",
         updateDesc: [{id: 1, desc: "초기배포"}],

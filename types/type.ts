@@ -13,6 +13,7 @@ export interface IMyProject {
   gitHub: string;
   update: Array<{
     id: number;
+    pjid: number;
     ver: string;
     date: string;
     updateDesc: Array<{id: number; desc: string}>;

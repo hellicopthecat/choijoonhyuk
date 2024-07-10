@@ -52,10 +52,10 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
     try {
       await transporter.sendMail(mailOption);
       revalidatePath("/");
+      return {sendMsgState: true};
     } catch (error) {
       return {error};
     }
-    return {sendMsgState: true};
   } else {
     return {
       sendMsgState: false,

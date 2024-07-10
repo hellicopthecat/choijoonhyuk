@@ -2,16 +2,27 @@
 import RowCont from "@/components/shared/rowCont";
 import SharedText from "@/components/shared/sharedText";
 import {IMyProject} from "@/types/type";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export default function UpdateComp({item}: {item: IMyProject["update"]}) {
+export default function UpdateComp({
+  id,
+  item,
+}: {
+  id: number;
+  item: IMyProject["update"];
+}) {
   const [slide, setSlide] = useState(false);
+
+  const handleSlideDown = (pjId: number) => {
+    setSlide((prev) => !prev);
+  };
+  useEffect(() => {}, [slide]);
   return (
     <div>
       <RowCont className="gap-3">
         <SharedText textType="h6" text="Update Log" />
         <button
-          onClick={() => setSlide((prev) => !prev)}
+          onClick={() => handleSlideDown(id)}
           className={`${
             slide ? "rotate-180" : "rotate-0"
           } transition ease-in-out duration-300`}
@@ -47,11 +58,13 @@ export default function UpdateComp({item}: {item: IMyProject["update"]}) {
           <div
             key={logs.id}
             className={` ${
-              slide ? " scale-y-100 h-full" : "scale-y-0 h-0"
+              slide && logs.pjid === id
+                ? " scale-y-100 h-full"
+                : "scale-y-0 h-0"
             } origin-top transition ease-in-out duration-300`}
           >
             <SharedText textType="h6" text={`ver. ${logs.ver}`} />
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <SharedText textType="h6" text="업데이트 날짜" />
               <SharedText textType="span" text={logs.date} />
             </div>

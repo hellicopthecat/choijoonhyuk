@@ -6,6 +6,7 @@ import Image from "next/image";
 import githubIcons from "@/public/codeSvg/github.svg";
 import Link from "next/link";
 import UpdateComp from "./update/updateComp";
+import ProjectDesc from "./description/ProjectDesc";
 
 export default function ProjectCard({item}: {item: IMyProject}) {
   return (
@@ -56,6 +57,7 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
+            width={24}
             height={24}
           />
         ))}
@@ -65,6 +67,7 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
+            width={24}
             height={24}
           />
         ))}
@@ -74,26 +77,28 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
+            width={24}
             height={24}
           />
         ))}
       </div>
-      <div className="flex flex-col gap-2">
-        <SharedText textType="p" text="설명" />
-        <SharedText textType="p" text={item.desc ? item.desc : "미작성"} />
-        <RowCont className="gap-5">
-          <Link href={item.gitHub}>
-            <Image
-              src={githubIcons}
-              alt="githubIcon"
-              width={25}
-              className="bg-white rounded-full"
-            />
-          </Link>
+
+      <RowCont className="gap-5">
+        <Link href={item.gitHub}>
+          <Image
+            src={githubIcons}
+            alt="githubIcon"
+            width={25}
+            className="bg-white rounded-full"
+          />
+        </Link>
+        <Link href={item.gitHub}>
           <SharedText textType="p" text="Go GitHub" />
-        </RowCont>
-      </div>
-      <UpdateComp item={item.update} />
+        </Link>
+      </RowCont>
+      <Link href={`/project_page/${item.id}`}>
+        <SharedText textType="p" text={`Go Detail \u2192`} />
+      </Link>
     </div>
   );
 }

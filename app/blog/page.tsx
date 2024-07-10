@@ -1,10 +1,8 @@
-import Home from "@/components/home/home";
+import Blog from "@/components/blog/blog";
 import {Metadata} from "next";
-
 export const metadata: Metadata = {
-  title: "HOME",
+  title: "BLOG",
 };
-
 export default function Page() {
-  return <Home />;
+  return <Blog />;
 }

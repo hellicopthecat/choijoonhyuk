@@ -6,6 +6,9 @@
   .name_slide {
     animation: 1.2s ease-in-out NameSlide;
   }
+  .nav_slide {
+    animation: 1.2s ease-in-out NavSlide;
+  }
 }
 
 @keyframes NameSlide {
@@ -13,6 +16,17 @@
     transform: translateX(-100%);
   }
   to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes NavSlide {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
     transform: translateX(0%);
   }
 }
