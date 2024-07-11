@@ -33,8 +33,14 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.NEXT_PUBLIC_AUTH_USER,
-        pass: process.env.NEXT_PUBLIC_AUTH_KEY,
+        user:
+          process.env.NODE_ENV === "development"
+            ? process.env.NEXT_PUBLIC_AUTH_USER
+            : process.env.DATABASE_AUTH_USER,
+        pass:
+          process.env.NODE_ENV === "development"
+            ? process.env.NEXT_PUBLIC_AUTH_KEY
+            : process.env.DATABASE_AUTH_KEY,
       },
     });
     const mailOption: Mail.Options = {
