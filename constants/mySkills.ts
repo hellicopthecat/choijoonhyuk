@@ -16,7 +16,7 @@ import nodejs from "@/public/codeSvg/nodejs.svg";
 import express from "@/public/codeSvg/express.svg";
 import mongoose from "@/public/codeSvg/mongoose.png";
 import apollo from "@/public/codeSvg/apollo-graphql.svg";
-import prisma from "@/public/codeSvg/prisma_dark.svg";
+import prisma from "@/public/codeSvg/prismaDark.svg";
 import expo from "@/public/codeSvg/expo.svg";
 import reactNative from "@/public/codeSvg/react-native.svg";
 import photoshop from "@/public/codeSvg/photoshop.svg";

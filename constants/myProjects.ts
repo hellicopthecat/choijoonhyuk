@@ -16,7 +16,7 @@ import styleCompIcon from "@/public/codeSvg/styledcomponents.svg";
 import apolloIcon from "@/public/codeSvg/apollo-graphql.svg";
 import graphqlIcon from "@/public/codeSvg/graphql.svg";
 import reduxIcon from "@/public/codeSvg/redux.svg";
-import prismaIcon from "@/public/codeSvg/prisma_dark.svg";
+import prismaIcon from "@/public/codeSvg/prismaDark.svg";
 import expoIcon from "@/public/codeSvg/expo.svg";
 import zustandIcon from "@/public/codeSvg/zustand.svg";
 import socketIOIcon from "@/public/codeSvg/socket-io.svg";
