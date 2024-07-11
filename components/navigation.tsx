@@ -27,9 +27,9 @@ export default function Navigation() {
   }, [height]);
   return (
     <nav
-      className={`sticky top-0 z-10  bg-slate-800 border-b shadow-lg transition-all ease-in-out duration-300
-      xl:nav_slide xl:absolute xl:shadow-none xl:border-b-0 xl:bg-transparent xl:right-0 `}
-      style={isXl ? {top: height} : {}}
+      className={`sticky z-10 bg-slate-800 border-b shadow-lg transition-all ease-in-out duration-300
+      xl:nav_slide xl:shadow-none xl:border-b-0 xl:bg-transparent`}
+      style={{top: isXl ? height : 0}}
     >
       <ul
         className={`flex justify-between items-center p-5 xl:p-0 xl:flex-col xl:gap-10 transition-all ease-in-out duration-300 `}

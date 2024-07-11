@@ -19,3 +19,16 @@ export interface IMyProject {
     updateDesc: Array<{id: number; desc: string}>;
   }>;
 }
+
+export interface ISkillArgs {
+  name: string;
+  img: string;
+  desc?: Array<string>;
+}
+export interface IMySkills {
+  front: Array<ISkillArgs>;
+  style: Array<ISkillArgs>;
+  back: Array<ISkillArgs>;
+  mobile: Array<ISkillArgs>;
+  design: Array<ISkillArgs>;
+}

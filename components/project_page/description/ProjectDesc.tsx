@@ -38,13 +38,11 @@ export default function ProjectDesc({desc}: {desc: string}) {
         </button>
       </RowCont>
       {slide ? (
-        <div className="scale-y-100 h-full origin-top transition ease-in-out duration-300">
+        <div className="scale-y-100  origin-top transition ease-in-out duration-200">
           <SharedText textType="p" text={desc ? desc : "미작성"} />
         </div>
       ) : (
-        <div className="scale-y-0 h-0 origin-top transition ease-in-out duration-300">
-          <SharedText textType="p" text={desc ? desc : "미작성"} />
-        </div>
+        <div className="scale-y-0  origin-top transition ease-in-out duration-200"></div>
       )}
     </div>
   );

@@ -7,6 +7,8 @@
     animation: 1.2s ease-in-out NameSlide;
   }
   .nav_slide {
+    position: absolute;
+    right: 0;
     animation: 1.2s ease-in-out NavSlide;
   }
 }

@@ -57,7 +57,6 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
-            width={24}
             height={24}
           />
         ))}
@@ -67,7 +66,6 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
-            width={24}
             height={24}
           />
         ))}
@@ -77,7 +75,6 @@ export default function ProjectCard({item}: {item: IMyProject}) {
             key={stack.name}
             src={stack.badge}
             alt={stack.name}
-            width={24}
             height={24}
           />
         ))}
